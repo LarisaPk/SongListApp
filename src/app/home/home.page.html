@@ -1,3 +1,4 @@
+<!--Larisa Pyykölä, student number 1702357-->
 <ion-header>
   <ion-toolbar>
     <ion-title>
@@ -6,9 +7,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <div class="ion-padding">
     The world is your oyster.
     <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
+  <firebase-ui></firebase-ui> <!--added firebase ui component here-->
+  <h1 *ngIf="afAuth.auth.currentUser">Welcome {{afAuth.auth.currentUser.displayName}}</h1> <!--added Welcome message with current user's name if user is logged in
+  --> 
+
+  <ion-button *ngIf="afAuth.auth.currentUser" (click)="signOut()">Sign Out</ion-button> <!--added sign out button with corresponding method-->
 </ion-content>
