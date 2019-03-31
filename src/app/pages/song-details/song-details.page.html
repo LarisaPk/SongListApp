@@ -1,0 +1,24 @@
+<!--Larisa Pyykölä, student number 1702357-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button><!--added back button-->
+
+    </ion-buttons>
+    
+    <ion-title>SongDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>  
+      <ion-input requred type="text" placeholder="songName" [(ngModel)]="song.songName"> </ion-input>
+    </ion-item>
+    <ion-item>  
+        <ion-input requred type="text" placeholder="artistName" [(ngModel)]="song.artistName"> </ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="saveSong()">Save</ion-button>
+  </ion-list>
+
+</ion-content>

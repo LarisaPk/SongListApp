@@ -16,6 +16,7 @@ import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import {AngularFirestoreModule} from '@angular/fire/firestore'; // added inport of firestore here
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = { // deleted not needed auth options
   signInFlow: 'popup',
@@ -39,7 +40,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = { // deleted not needed aut
 // added following inports
     AngularFireModule.initializeApp(environment.firebase), // changed  to firebase and imported environment
     AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    AngularFirestoreModule // added firestoremodule here
   ],
 
   providers: [

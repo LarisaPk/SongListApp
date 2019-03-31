@@ -11,9 +11,9 @@ import { FirstWithTabsPage } from './first-with-tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',// added array of children
+    path: 'tabs', // added array of children
     component: FirstWithTabsPage,
-    children:[
+    children: [
       {
         path: 'home',
         loadChildren: '../home/home.module#HomePageModule'
@@ -33,6 +33,7 @@ const routes: Routes = [
     redirectTo: 'tabs/home',
     pathMatch: 'full'
   }
+
 ];
 
 @NgModule({

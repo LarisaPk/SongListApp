@@ -1,5 +1,3 @@
-// Larisa Pyykölä, student number 1702357
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -7,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SongListPage } from './song-list.page';
+import { SongDetailsPage } from './song-details.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SongListPage
+    component: SongDetailsPage
   }
 ];
 
@@ -23,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SongListPage]
+  declarations: [SongDetailsPage]
 })
-export class SongListPageModule {}
+export class SongDetailsPageModule {}

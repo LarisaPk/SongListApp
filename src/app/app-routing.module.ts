@@ -7,9 +7,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // empty path redirects to login page
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+  { path: 'details', loadChildren: './pages/song-details/song-details.module#SongDetailsPageModule' },
+  { path: 'details/:id', loadChildren: './pages/song-details/song-details.module#SongDetailsPageModule' },
+
   /*
   *Leave out these pathes:
-  *
   *
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'terms', loadChildren: './terms/terms.module#TermsPageModule' },

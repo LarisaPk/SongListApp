@@ -9,6 +9,47 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <!--added ion-list of items (songs) with sliding possibility-- TODO change to my needs how it will look like-->
+  <ion-list>
+    <ion-item-sliding *ngFor = "let item of songs">
+      <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+        <ion-label>
+          {{item.artistName}}
+          <p> 
+              {{item.songName}}
+          </p>
+          </ion-label>
+          <ion-note>{{item.createdAt | date:'short'}}</ion-note>
+        
+      </ion-item>
+     <ion-item-options side="end">
+       <ion-item-option (click)="remove(item)" color="secondary">
+          Remove
+          <ion-icon name="trash" slot="end"> </ion-icon>
+       </ion-item-option>
+     </ion-item-options> 
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <!--added fake skeleton to see how content will look like-->
+  <ng-container *ngIf="!songs||songs.length==0">
+    <div *ngFor="let n of [0,1,2]" padding>
+      <ion-skeleton-text></ion-skeleton-text>
+      <p>
+        <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+      </p>
+
+
+    </div>
+  </ng-container>
+
+<!--added fab button for adding or make modifications to song-->
+  <ion-fab vertical="bottom" horisontal="end" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
