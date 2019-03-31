@@ -37,7 +37,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = { // deleted not needed aut
     IonicModule.forRoot(),
     AppRoutingModule,
 // added following inports
-    AngularFireModule.initializeApp(environment.firebase), // changet  to firebase and imported environment
+    AngularFireModule.initializeApp(environment.firebase), // changed  to firebase and imported environment
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
