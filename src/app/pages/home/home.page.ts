@@ -1,6 +1,6 @@
 // Larisa Pyykölä student number 1702357
 import { Component } from '@angular/core';
-
+import { AngularFireAuth } from '@angular/fire/auth'; // added import
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-constructor () {
+constructor (public afAuth: AngularFireAuth) {
 
 }
 

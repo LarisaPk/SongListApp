@@ -14,17 +14,18 @@
   <ion-list>
     <ion-item-sliding *ngFor = "let item of songs">
       <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+        <ion-icon name="musical-notes" slot="start"> </ion-icon>
         <ion-label>
-          {{item.artistName}}
+           {{item.songName}}
           <p> 
-              {{item.songName}}
+             {{item.artistName}}
           </p>
           </ion-label>
           <ion-note>{{item.createdAt | date:'short'}}</ion-note>
         
       </ion-item>
      <ion-item-options side="end">
-       <ion-item-option (click)="remove(item)" color="secondary">
+       <ion-item-option (click)="remove(item)" color="danger">
           Remove
           <ion-icon name="trash" slot="end"> </ion-icon>
        </ion-item-option>

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Song, SongsService } from 'src/app/services/songs.service';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingController, NavController } from '@ionic/angular';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
+
 
 @Component({
   selector: 'app-song-details',
@@ -11,11 +11,10 @@ import { Content } from '@angular/compiler/src/render3/r3_ast';
   styleUrls: ['./song-details.page.scss'],
 })
 export class SongDetailsPage implements OnInit {
- song: Song = {
-  songName: 'Test',
-  artistName: 'Test',
+  song: Song = {
+  songName: '',
+  artistName: '',
   createdAt: new Date().getTime(),
-  // id: 'test12345'
  };
 
  songId = null;

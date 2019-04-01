@@ -3,6 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'; // added import
 import {Router} from '@angular/router'; // added import of router
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import {Router} from '@angular/router'; // added import of router
 export class LoginPage implements OnInit {
 
   // declared constructior with dependency here
-constructor (public afAuth: AngularFireAuth, private router: Router) {
+constructor (public afAuth: AngularFireAuth, private router: Router, private nav: NavController) {
 
 }
 // Listen to auth state changes
@@ -35,5 +36,10 @@ signOut() {
 
   });
 }
+
+backButton() {
+  this.nav.navigateBack(['menu', 'first'])
+    location.reload();
+  }
 
 }

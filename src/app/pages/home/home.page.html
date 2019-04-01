@@ -10,4 +10,17 @@
   </ion-header>
 
 <ion-content padding>
+   
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle *ngIf="afAuth.auth.currentUser">{{afAuth.auth.currentUser.displayName}}</ion-card-subtitle>      <!--added Welcome message with current user's name if user is logged in
+    -->
+          <ion-card-title *ngIf="afAuth.auth.currentUser">Welcome to Song List App!</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <img src="https://images.unsplash.com/photo-1488376739361-ed24c9beb6d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80"/>
+       
+        </ion-card-content>
+      </ion-card>
 </ion-content>
